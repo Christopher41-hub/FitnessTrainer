@@ -14,4 +14,4 @@ FitnessTrainer ist eine Anwendung, die dir hilft, dein Training zu verwalten und
 
 
 
-Aufrufbar über: `http://localhost:8080/fitnesstrainer`
+Aufrufbar über: http://localhost:8080/fitnesstrainer
