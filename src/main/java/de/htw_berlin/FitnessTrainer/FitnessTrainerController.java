@@ -6,7 +6,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "https://fitnesstrainer-frontend.onrender.com"
+})
 public class FitnessTrainerController {
 
     @GetMapping("/fitnesstrainer")
