@@ -6,11 +6,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/fitnesstrainer")
-@CrossOrigin(origins = {
-        "http://localhost:5173",
-        "http://localhost:5174",
-        "https://fitnesstrainer-frontend.onrender.com"
-})
+
 public class FitnessTrainerController {
 
     private final ExerciseexecutionRepository repository;
