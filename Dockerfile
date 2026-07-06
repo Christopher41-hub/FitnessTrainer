@@ -1,8 +1,19 @@
+FROM eclipse-temurin:21-jdk AS build
+
+WORKDIR /app
+
+COPY gradlew .
+COPY gradle gradle
+COPY build.gradle settings.gradle ./
+COPY src src
+
+RUN chmod +x gradlew && ./gradlew clean bootJar --no-daemon
+
 FROM eclipse-temurin:21-jdk
 
 WORKDIR /app
 
-COPY build/libs/FitnessTrainer-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/build/libs/*-SNAPSHOT.jar app.jar
 
 EXPOSE 8080
 
