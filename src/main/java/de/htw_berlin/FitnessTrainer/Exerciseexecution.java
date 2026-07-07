@@ -1,9 +1,6 @@
 package de.htw_berlin.FitnessTrainer;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Exerciseexecution {
@@ -17,6 +14,10 @@ public class Exerciseexecution {
     private String date;
     private int reps;
     private boolean done;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     public Exerciseexecution() {
     }
@@ -70,5 +71,13 @@ public class Exerciseexecution {
 
     public void setDone(boolean done) {
         this.done = done;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
